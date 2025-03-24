@@ -12,7 +12,7 @@ This repository contains end-to-end tests for the Systima application using [Pla
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/<your-username>/qa-e2e-project.git
+   git clone https://github.com/Vasich24/QA-E2E-Project.git
    cd qa-e2e-project
    ```
 
