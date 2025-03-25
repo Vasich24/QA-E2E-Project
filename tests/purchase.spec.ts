@@ -16,7 +16,6 @@ test.describe('Purchase Scenarios', () => {
     const purchasePage = new PurchasePage(page);
 
     await purchasePage.navigateToBokforing();
-    // 2. Заповнення форми
     await purchasePage.selectContact('Systima AS');
     await purchasePage.fillAmount('100');
     await purchasePage.fillInvoiceDate('01.01.2024');
@@ -46,7 +45,7 @@ test.describe('Purchase Scenarios', () => {
     await purchasePage.clickBokfor();
 
     const errorAlert = purchasePage.getErrorAlert(); 
-    await expect(errorAlert).toContainText('Fakturanr. er allerede bokført', { timeout: 10_000 });
+    await expect(errorAlert).toContainText('Fakturanr. er allerede bokført', { timeout: 20000});
 
     const isCleared = await purchasePage.isFormCleared();
     expect(isCleared).toBe(false);

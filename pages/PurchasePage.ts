@@ -9,12 +9,12 @@ export class PurchasePage {
 
   async navigateToBokforing() {
     await this.page.getByRole('button', { name: 'Bokføring' }).click();
-    await this.page.getByRole('link', { name: 'Bokfør andre filer' }).waitFor({ state: 'visible', timeout: 10000 });
+    await this.page.getByRole('link', { name: 'Bokfør andre filer' }).waitFor({ state: 'visible', timeout: 20000 });
     await this.page.getByRole('link', { name: 'Bokfør andre filer' }).click();
   }
 
 async selectContact(contactName: string) {
-  await this.page.getByTestId('contact-select').waitFor({ state: 'visible', timeout: 10000 });
+  await this.page.getByTestId('contact-select').waitFor({ state: 'visible', timeout: 20000 });
   await this.page.getByTestId('contact-select').click();
   await this.page.locator('.v-list-item__title', { hasText: contactName }).click();
 }

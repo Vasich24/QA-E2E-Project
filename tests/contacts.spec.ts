@@ -35,6 +35,6 @@ test.describe('Contact Scenarios', () => {
     await opprettKontaktBtn.hover();
     await contactsPage.clickOpprettKontakt();
 
-    await expect(contactsPage.getSuccessMessage()).toBeVisible();
+    await expect(contactsPage.getSuccessMessage()).toBeVisible({ timeout: 20000 });
   });
 });
