@@ -31,13 +31,13 @@ test.describe('Contact Scenarios', () => {
     await contactsPage.clickNyKontakt();
     await contactsPage.fillName('Test');
     await page.keyboard.press('Tab');
-    const opprettKontaktBtn = page.getByRole('button', { name: 'Opprett kontakt' });
-    await opprettKontaktBtn.hover();
-    await opprettKontaktBtn.waitFor({ state: 'visible', timeout: 10000 });
+    const opprettBtn = page.getByRole('button', { name: 'Opprett kontakt' });
+    await opprettBtn.hover();
+    await opprettBtn.waitFor({ state: 'visible', timeout: 10000 });
 
-    await expect(opprettKontaktBtn).toBeEnabled({ timeout: 10000 });
-    
-    await opprettKontaktBtn.click();
+    await page.waitForSelector('button:has-text("Opprett kontakt"):not([disabled])', { timeout: 10000 });
+
+    await contactsPage.clickOpprettKontakt()
 
     await expect(contactsPage.getSuccessMessage()).toBeVisible({ timeout: 20000 });
   });
