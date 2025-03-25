@@ -42,6 +42,7 @@ test.describe('Purchase Scenarios', () => {
     await purchasePage.fillInvoiceNumber('1');
     await purchasePage.selectAccount('1000 Utvikling, ervervet');
 
+    await page.waitForTimeout(2000);
     await purchasePage.clickBokfor();
 
     const errorAlert = purchasePage.getErrorAlert(); 
