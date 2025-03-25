@@ -36,7 +36,7 @@ test.describe('Contact Scenarios', () => {
     await opprettBtn.waitFor({ state: 'visible', timeout: 10000 });
 
     await page.waitForSelector('button:has-text("Opprett kontakt"):not([disabled])', { timeout: 10000 });
-
+    await page.waitForTimeout(2000);
     await contactsPage.clickOpprettKontakt()
 
     await expect(contactsPage.getSuccessMessage()).toBeVisible({ timeout: 20000 });
