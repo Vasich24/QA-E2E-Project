@@ -30,6 +30,7 @@ test.describe('Contact Scenarios', () => {
     await contactsPage.navigateToContacts();
     await contactsPage.clickNyKontakt();
     await contactsPage.fillName('Test');
+    await page.keyboard.press('Tab');
     const opprettKontaktBtn = page.getByRole('button', { name: 'Opprett kontakt' });
     await opprettKontaktBtn.waitFor({ state: 'visible' });  
     await opprettKontaktBtn.hover();
