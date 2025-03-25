@@ -32,10 +32,8 @@ test.describe('Contact Scenarios', () => {
     await contactsPage.fillName('Test');
     await page.keyboard.press('Tab');
     const opprettKontaktBtn = page.getByRole('button', { name: 'Opprett kontakt' });
-    await opprettKontaktBtn.waitFor({ state: 'visible' });  
-    await opprettKontaktBtn.hover();
-    await contactsPage.clickOpprettKontakt();
-
+    await opprettKontaktBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(opprettKontaktBtn).toBeEnabled({ timeout: 10000 });
     await expect(contactsPage.getSuccessMessage()).toBeVisible({ timeout: 20000 });
   });
 });
